@@ -1,0 +1,40 @@
+<template name="enrollmentIndex">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Enrollments</h1>
+      <a class="btn btn-primary" href="{{pathFor 'enrollmentNew'}}" role="button">New enrollment</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Wechat</th>
+            <th>Message</th>
+            <th>CreatedAt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each enrollments}}
+          <tr>
+            <td><a href="{{pathFor 'enrollmentShow'}}">{{name}}</a></td>
+            <td>{{mobile}}</td>
+            <td>{{email}}</td>
+            <td>{{wechat}}</td>
+            <td>{{message}}</td>
+            <td>{{createdAt}}</td>
+            <!-- <td>{{showPrettyTimestamp createdAt}}</td>
+            <td>{{showTimeAgo updatedAt}}</td> -->
+            <td>
+              <a class="btn btn-xs btn-default" href="{{pathFor 'enrollmentEdit'}}" role="button">Edit</a>
+              <a class="btn btn-xs btn-danger delete-enrollment" href="#" role="button">Delete</a>
+              </td>
+          </tr>
+          {{else}}
+          No enrollments
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

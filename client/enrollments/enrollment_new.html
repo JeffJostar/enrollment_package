@@ -1,0 +1,14 @@
+<template name="enrollmentNew">
+  <h2>Create enrollment</h2>
+  {{#autoForm collection="Enrollments" id="enrollmentForm" type="insert"}}
+  <fieldset>
+    {{> afQuickField name='name'}}
+    {{> afQuickField name='mobile'}}
+    {{> afQuickField name='email'}}
+    {{> afQuickField name='wechat'}}
+    {{> afQuickField name='message'}}
+    <!-- {{> afQuickField name='createdAt'}} -->
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Create</button>
+  <a class="btn btn-link" role="button" href="{{pathFor 'enrollmentIndex'}}">Back</a> {{/autoForm}}
+</template>
